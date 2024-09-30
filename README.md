@@ -192,7 +192,7 @@ server {
 
 ```
 
-Step 4: Login the docker root user 
+Step 4: Login the docker root user {Ensure Container name my container name (blog_php)}
 
 ```bash
 
@@ -238,7 +238,7 @@ Give Nginx ownership of the Laravel directory:
   ```bash
   chown -R www-data:www-data /var/www/html/
   chmod -R 755 /var/www/html/
-  chown -R laravel:laravel /var/www/html/
+  chown -R laravel:laravel /var/www/html/ ----------------> (if create a docker file any user so definitely permission this user)
   ```
 
 Step 11: laravel Admin Panel laravel breeze (If Needs)
