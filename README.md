@@ -192,4 +192,10 @@ server {
 
 ```
 
+Step 4: Login the docker root user 
 
+```bash
+
+docker exec -u root -it blog_php sh
+
+```
