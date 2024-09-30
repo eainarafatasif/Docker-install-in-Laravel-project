@@ -199,3 +199,52 @@ Step 4: Login the docker root user
 docker exec -u root -it blog_php sh
 
 ```
+
+Step 5: Install Composer dependencies:
+  ```bash
+  composer install
+  ```
+
+Step 6: Set up environment file:
+  ```bash
+  cp .env.example .env
+  nano .env
+  ```
+Step 7: Adjust .env for Database Connection
+Make sure your .env file in Laravel matches the MySQL setup in the docker-compose.yml file:
+
+```bash
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_password
+
+```
+Step 8: Generate an application key:
+  ```bash
+  php artisan key:generate
+  ```
+
+Step 8: Run migrations:
+  ```bash
+  php artisan migrate
+  ```
+
+Step 10:Set Up Permissions
+Give Nginx ownership of the Laravel directory:
+  ```bash
+  chown -R www-data:www-data /var/www/html/
+  chmod -R 755 /var/www/html/
+  chown -R laravel:laravel /var/www/html/
+  ```
+
+Step 11: laravel Admin Panel laravel breeze (If Needs)
+
+```bash
+https://laravel.com/docs/11.x/starter-kits
+```
+
+
